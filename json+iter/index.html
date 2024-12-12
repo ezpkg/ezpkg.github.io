@@ -1,0 +1,380 @@
+<!DOCTYPE html><html lang="en" data-theme="json+iter"> <head><meta charset="utf-8"><meta name="go-import" content="ezpkg.io/json+iter git https://github.com/ezpkg/json+iter"><meta name="go-source" content="ezpkg.io/json+iter https://github.com/ezpkg/json+iter https://github.com/ezpkg/json+iter/tree/main{/dir} https://github.com/ezpkg/json+iter/tree/main{/dir}/{file}#L{line}"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ezpkg.io/json+iter - Collection of Go packages</title><link rel="canonical" href="https://ezpkg.io/json+iter/"><meta name="description" content="Collection of packages and tools to make writing Go code easier."><meta property="og:title" content="ezpkg.io - Collection of Go packages"><meta property="og:type" content="website"><meta property="og:url" content="https://ezpkg.io/json+iter/"><meta property="og:locale" content="en"><meta property="og:description" content="Collection of packages and tools to make writing Go code easier."><meta property="og:site_name" content="ezpkg.io"><meta property="og:image" content="https://ezpkg.io/_/ogimg.png"><meta property="og:image:alt" content="GopherZ"><meta name="twitter:card" content="summary"><meta name="twitter:site"><meta name="twitter:title" content="ezpkg.io - Collection of Go packages"><meta name="twitter:description" content="Collection of packages and tools to make writing Go code easier."><meta name="twitter:image" content="https://ezpkg.io/_/ogimg.png"><meta name="twitter:image:alt" content="GopherZ"><link rel="icon" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet"><script async src="https://www.googletagmanager.com/gtag/js?id=G-FKSD2RXL58"></script><link rel="stylesheet" href="/_astro/_slug_.B3X9-Xde.css"><script type="module">window.dataLayer=window.dataLayer||[];function a(){dataLayer.push(arguments)}a("js",new Date);a("config","G-FKSD2RXL58");
+</script></head> <body class="flex flex-col">  <div class="bg-base-100 text-base-content sticky top-0 z-30 flex h-16 w-full justify-center bg-opacity-90" data-astro-cid-3ef6ksr2> <nav class="navbar w-full flex flex-row px-4 align-bottom overflow-x-hidden" data-astro-cid-3ef6ksr2> <div class="flex flex-0 md:gap-1 lg:gap-2 font-bold text-2xl text-base-content" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2>e<span class="text-red-600 dark:text-red-400" data-astro-cid-3ef6ksr2>z</span>pkg.io</a> </div> <div class="flex-1 flex flex-row gap-4 pt-1 ml-2 overflow-x-scroll" data-astro-cid-3ef6ksr2> <div class="flex flex-row justify-center" data-astro-cid-3ef6ksr2> <a href="#pkgs" data-theme="json+iter" class="btn btn-primary btn-sm my-1 mx-1" data-astro-cid-3ef6ksr2>json+iter</a> </div> </div> <div class="flex-0 flex flex-row" data-astro-cid-3ef6ksr2> <div class="items-center lg:block" data-astro-cid-3ef6ksr2> <a href="https://github.com/ezpkg/ezpkg" target="_blank" class="btn btn-link text-base-content drawer-button font-normal w-16" data-astro-cid-3ef6ksr2> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="fill-current"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg> </a> </div>  </div> </nav> </div>   <main class="fill-current flex flex-col flex-1"> <div class="min-h-screen hero bg-base-200 bg-opacity-40"> <div class="hero-content text-center"> <div class=""> <div class="flex justify-center lg:pr-32"> <img alt="gopherz" src="/gopherz.svg"> </div> <p class="py-6 text-2xl">Collection of packages and tools to make writing Go code easier.</p> <p class="flex md:block lg:block flex-col"> <a href="#pkgs" class="btn btn-primary text-md px-8">List
+                            Packages</a> <span class="px-2 py-1"></span> <a href="http://github.com/ezpkg/ezpkg" target="_blank" class="btn btn-primary btn-outline text-md px-8">View
+                            Repository</a> </p> </div> </div> </div> <div class="min-h-screen sm:text-sm lg:text-xl px-4 md:px-16 lg:px-32 flex flex-col justify-center align-center"> <div class="flex-1"></div> <div class="lg:max-w-screen-lg"> <h2 class="">Introduction</h2> <p>
+As I work on various Go projects, I often find myself creating utility functions, extending
+                    existing
+                    packages, or developing packages to solve specific problems. Moving from one project to another,
+                    I
+                    usually have to copy or rewrite these solutions. So I created this repository to have all these
+                    utilities and packages in one place. Hopefully, you'll find them useful as well.
+</p> <p>
+These packages aim to enhance the functionality of the standard library and other popular
+                    packages.
+                    They
+                    are intended to be used together with other packages rather than replacing them. The APIs are
+                    designed
+                    based on my experience working with Go, focusing on simplicity and ease of use. I will try to
+                    follow
+                    best practices in Go, but not always. I also tend to choose a more performance implementation if
+                    possible.
+</p> <p class="text-center lg:mt-10"> <a href="https://olivernguyen.io/w/ezpkg" target="_blank" class="btn btn-primary btn-outline px-8">Read More</a> </p> </div> <div class="flex-1 my-4"></div> <div class="pb-4 flex flex-row flex-wrap justify-center relative"> <div id="pkgs" class="absolute left-0 w-1 h-1" style="top:-4rem"></div> <a data-theme="bytez" href="/bytez#pkgs" class="btn btn-primary btn-sm mb-2 mx-1 btn-outline">bytez</a><a data-theme="colorz" href="/colorz#pkgs" class="btn btn-primary btn-sm mb-2 mx-1 btn-outline">colorz</a><a data-theme="conveyz" href="/conveyz#pkgs" class="btn btn-primary btn-sm mb-2 mx-1 btn-outline">conveyz</a><a data-theme="diffz" href="/diffz#pkgs" class="btn btn-primary btn-sm mb-2 mx-1 btn-outline">diffz</a><a data-theme="errorz" href="/errorz#pkgs" class="btn btn-primary btn-sm mb-2 mx-1 btn-outline">errorz</a><a data-theme="fmtz" href="/fmtz#pkgs" class="btn btn-primary btn-sm mb-2 mx-1 btn-outline">fmtz</a><a data-theme="iter.json" href="/iter.json#pkgs" class="btn btn-primary btn-sm mb-2 mx-1 btn-outline">iter.json</a><a data-theme="iterz" href="/iterz#pkgs" class="btn btn-primary btn-sm mb-2 mx-1 btn-outline">iterz</a><a data-theme="logz" href="/logz#pkgs" class="btn btn-primary btn-sm mb-2 mx-1 btn-outline">logz</a><a data-theme="mapz" href="/mapz#pkgs" class="btn btn-primary btn-sm mb-2 mx-1 btn-outline">mapz</a><a data-theme="slicez" href="/slicez#pkgs" class="btn btn-primary btn-sm mb-2 mx-1 btn-outline">slicez</a><a data-theme="stacktracez" href="/stacktracez#pkgs" class="btn btn-primary btn-sm mb-2 mx-1 btn-outline">stacktracez</a><a data-theme="stringz" href="/stringz#pkgs" class="btn btn-primary btn-sm mb-2 mx-1 btn-outline">stringz</a><a data-theme="testingz" href="/testingz#pkgs" class="btn btn-primary btn-sm mb-2 mx-1 btn-outline">testingz</a><a data-theme="typez" href="/typez#pkgs" class="btn btn-primary btn-sm mb-2 mx-1 btn-outline">typez</a><a data-theme="unsafez" href="/unsafez#pkgs" class="btn btn-primary btn-sm mb-2 mx-1 btn-outline">unsafez</a> </div> </div> <div class="flex flex-col align-center justify-center px-4 md:px-16 lg:px-32 pb-10 bg-base-200 bg-opacity-20"> <div class="min-h-screen w-full max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg lg:text-xl flex flex-col align-center overflow-x-hidden"> <h2 class="text-primary text-4xl">ezpkg.io/json+iter</h2> <div class="flex flex-row my-4"> <a href="https://pkg.go.dev/ezpkg.io/json+iter" target="_blank"> <img alt="godoc" src="https://pkg.go.dev/badge/ezpkg.io/json+iter" style="height: 28px"> </a>&nbsp;
+<a href="https://github.com/ezpkg/json+iter" target="_blank"> <img alt="source" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"> </a> </div> <div class="md-content">  <h1 id="ezpkgioiterjson">ezpkg.io/iter.json</h1>
+<p>Package <a href="https://pkg.go.dev/ezpkg.io/iter.json">iter.json</a> is a minimal implementation of json parser and transformer in Go. The
+<code>Parse()</code> function returns an iter over the JSON object, which can be used to traverse the JSON object.</p>
+<h2 id="examples">Examples</h2>
+<p>Given an example <a href="https://github.com/ezpkg/ezpkg/blob/main/iter.json/examples/eve.json">eve.json</a> file:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Eve"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "age"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">24</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "scores"</span><span style="color:#E1E4E8">: [</span><span style="color:#79B8FF">9</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">8</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#79B8FF">  "address"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    "city"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"The Sun"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "zip"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">10101</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<p>You can query and manipulate the JSON object in various ways:</p>
+<h3 id="1-iterating-json">1. Iterating JSON:</h3>
+<p>Use <code>for range Parse()</code> to iterate over a JSON data, then print the path, key, token, and level of each item. See <a href="https://github.com/ezpkg/ezpkg/blob/main/iter.json/examples/01.iter/main.go">examples/01.iter</a>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#F97583">package</span><span style="color:#B392F0"> main</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#9ECBFF">    "</span><span style="color:#B392F0">fmt</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9ECBFF">    "</span><span style="color:#B392F0">ezpkg.io/errorz</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#E1E4E8">    iterjson </span><span style="color:#9ECBFF">"</span><span style="color:#B392F0">ezpkg.io/iter.json</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">func</span><span style="color:#B392F0"> main</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">    data </span><span style="color:#F97583">:=</span><span style="color:#9ECBFF"> `{"name": "Eve", "age": 24, "scores": [9, 10, 8], "address": {"city": "The Sun", "zip": 10101}}`</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // 🎄Example: iterate over json</span></span>
+<span class="line"><span style="color:#E1E4E8">    fmt.</span><span style="color:#B392F0">Printf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"| </span><span style="color:#79B8FF">%12v</span><span style="color:#9ECBFF"> | </span><span style="color:#79B8FF">%10v</span><span style="color:#9ECBFF"> | </span><span style="color:#79B8FF">%10v</span><span style="color:#9ECBFF"> |</span><span style="color:#79B8FF">%v</span><span style="color:#9ECBFF">|</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"PATH"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"KEY"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"TOKEN"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"LVL"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    fmt.</span><span style="color:#B392F0">Println</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"| ------------ | ---------- | ---------- | - |"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    for</span><span style="color:#E1E4E8"> item, err </span><span style="color:#F97583">:=</span><span style="color:#F97583"> range</span><span style="color:#E1E4E8"> iterjson.</span><span style="color:#B392F0">Parse</span><span style="color:#E1E4E8">([]</span><span style="color:#F97583">byte</span><span style="color:#E1E4E8">(data)) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        errorz.</span><span style="color:#B392F0">MustZ</span><span style="color:#E1E4E8">(err)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        fmt.</span><span style="color:#B392F0">Printf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"| </span><span style="color:#79B8FF">%12v</span><span style="color:#9ECBFF"> | </span><span style="color:#79B8FF">%10v</span><span style="color:#9ECBFF"> | </span><span style="color:#79B8FF">%10v</span><span style="color:#9ECBFF"> | </span><span style="color:#79B8FF">%v</span><span style="color:#9ECBFF"> |</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, item.</span><span style="color:#B392F0">GetPathString</span><span style="color:#E1E4E8">(), item.Key, item.Token, item.Level)</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<p>The code will output:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>|         PATH |        KEY |      TOKEN |LVL|</span></span>
+<span class="line"><span>| ------------ | ---------- | ---------- | - |</span></span>
+<span class="line"><span>|              |            |          { | 0 |</span></span>
+<span class="line"><span>|         name |     "name" |      "Eve" | 1 |</span></span>
+<span class="line"><span>|          age |      "age" |         24 | 1 |</span></span>
+<span class="line"><span>|       scores |   "scores" |          [ | 1 |</span></span>
+<span class="line"><span>|     scores.0 |            |          9 | 2 |</span></span>
+<span class="line"><span>|     scores.1 |            |         10 | 2 |</span></span>
+<span class="line"><span>|     scores.2 |            |          8 | 2 |</span></span>
+<span class="line"><span>|       scores |            |          ] | 1 |</span></span>
+<span class="line"><span>|      address |  "address" |          { | 1 |</span></span>
+<span class="line"><span>| address.city |     "city" |  "The Sun" | 2 |</span></span>
+<span class="line"><span>|  address.zip |      "zip" |      10101 | 2 |</span></span>
+<span class="line"><span>|      address |            |          } | 1 |</span></span>
+<span class="line"><span>|              |            |          } | 0 |</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="2-building-json">2. Building JSON:</h3>
+<p>Use <code>Builder</code> to build a JSON data. It accepts optional arguments for indentation. See <a href="https://github.com/ezpkg/ezpkg/blob/main/iter.json/examples/02.builder/main.go">examples/02.builder</a>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#E1E4E8">b </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> iterjson.</span><span style="color:#B392F0">NewBuilder</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"    "</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#6A737D">// open an object</span></span>
+<span class="line"><span style="color:#E1E4E8">b.</span><span style="color:#B392F0">Add</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">, iterjson.TokenObjectOpen)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// add a few fields</span></span>
+<span class="line"><span style="color:#E1E4E8">b.</span><span style="color:#B392F0">Add</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"name"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"Alice"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">b.</span><span style="color:#B392F0">Add</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"age"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">22</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">b.</span><span style="color:#B392F0">Add</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"email"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"alice@example.com"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">b.</span><span style="color:#B392F0">Add</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"phone"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"(+84) 123-456-789"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// open an array</span></span>
+<span class="line"><span style="color:#E1E4E8">b.</span><span style="color:#B392F0">Add</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"languages"</span><span style="color:#E1E4E8">, iterjson.TokenArrayOpen)</span></span>
+<span class="line"><span style="color:#E1E4E8">b.</span><span style="color:#B392F0">Add</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"English"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">b.</span><span style="color:#B392F0">Add</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"Vietnamese"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">b.</span><span style="color:#B392F0">Add</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">, iterjson.TokenArrayClose)</span></span>
+<span class="line"><span style="color:#6A737D">// close the array</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// accept any type that can marshal to json</span></span>
+<span class="line"><span style="color:#E1E4E8">b.</span><span style="color:#B392F0">Add</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"address"</span><span style="color:#E1E4E8">, </span><span style="color:#B392F0">Address</span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#E1E4E8">    HouseNumber: </span><span style="color:#79B8FF">42</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    Street:      </span><span style="color:#9ECBFF">"Ly Thuong Kiet"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    City:        </span><span style="color:#9ECBFF">"Ha Noi"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    Country:     </span><span style="color:#9ECBFF">"Vietnam"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// accept []byte as raw json</span></span>
+<span class="line"><span style="color:#E1E4E8">b.</span><span style="color:#B392F0">Add</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"pets"</span><span style="color:#E1E4E8">, []</span><span style="color:#F97583">byte</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`[{"type":"cat","name":"Kitty","age":2},{"type":"dog","name":"Yummy","age":3}]`</span><span style="color:#E1E4E8">))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// close the object</span></span>
+<span class="line"><span style="color:#E1E4E8">b.</span><span style="color:#B392F0">Add</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">, iterjson.TokenObjectClose)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">out </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> errorz.</span><span style="color:#B392F0">Must</span><span style="color:#E1E4E8">(b.</span><span style="color:#B392F0">Bytes</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#E1E4E8">fmt.</span><span style="color:#B392F0">Printf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">--- build json ---</span><span style="color:#79B8FF">\n%s\n</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, out)</span></span>
+<span class="line"></span></code></pre>
+<p>Which will output the JSON with indentation:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">    "name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Alice"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "age"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">22</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "email"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"alice@example.com"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "phone"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"(+84) 123-456-789"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "languages"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#9ECBFF">        "English"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">        "Vietnamese"</span></span>
+<span class="line"><span style="color:#E1E4E8">    ],</span></span>
+<span class="line"><span style="color:#79B8FF">    "address"</span><span style="color:#E1E4E8">: {</span><span style="color:#79B8FF">"house_number"</span><span style="color:#E1E4E8">:</span><span style="color:#79B8FF">42</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">"street"</span><span style="color:#E1E4E8">:</span><span style="color:#9ECBFF">"Ly Thuong Kiet"</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">"city"</span><span style="color:#E1E4E8">:</span><span style="color:#9ECBFF">"Ha Noi"</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">"country"</span><span style="color:#E1E4E8">:</span><span style="color:#9ECBFF">"Vietnam"</span><span style="color:#E1E4E8">},</span></span>
+<span class="line"><span style="color:#79B8FF">    "pets"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"cat"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Kitty"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "age"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">2</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"dog"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Yummy"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "age"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">3</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    ]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h3 id="3-formatting-json">3. Formatting JSON:</h3>
+<p>You can reconstruct or format a JSON data by sending its key and values to a <code>Builder</code>. See <a href="https://github.com/ezpkg/ezpkg/blob/main/iter.json/examples/03.reformat/main.go">examples/03.reformat</a>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#6A737D">    // 🐝Example: minify json</span></span>
+<span class="line"><span style="color:#E1E4E8">    b </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> iterjson.</span><span style="color:#B392F0">NewBuilder</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    for</span><span style="color:#E1E4E8"> item, err </span><span style="color:#F97583">:=</span><span style="color:#F97583"> range</span><span style="color:#E1E4E8"> iterjson.</span><span style="color:#B392F0">Parse</span><span style="color:#E1E4E8">(data) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        errorz.</span><span style="color:#B392F0">MustZ</span><span style="color:#E1E4E8">(err)</span></span>
+<span class="line"><span style="color:#E1E4E8">        b.</span><span style="color:#B392F0">AddRaw</span><span style="color:#E1E4E8">(item.Key, item.Token)</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">    out </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> errorz.</span><span style="color:#B392F0">Must</span><span style="color:#E1E4E8">(b.</span><span style="color:#B392F0">Bytes</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#E1E4E8">    fmt.</span><span style="color:#B392F0">Printf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">--- minify ---</span><span style="color:#79B8FF">\n%s\n</span><span style="color:#9ECBFF">----------</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, out)</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#6A737D">    // 🦋Example: format json</span></span>
+<span class="line"><span style="color:#E1E4E8">    b </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> iterjson.</span><span style="color:#B392F0">NewBuilder</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"👉   "</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">\t</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    for</span><span style="color:#E1E4E8"> item, err </span><span style="color:#F97583">:=</span><span style="color:#F97583"> range</span><span style="color:#E1E4E8"> iterjson.</span><span style="color:#B392F0">Parse</span><span style="color:#E1E4E8">(data) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        errorz.</span><span style="color:#B392F0">MustZ</span><span style="color:#E1E4E8">(err)</span></span>
+<span class="line"><span style="color:#E1E4E8">        b.</span><span style="color:#B392F0">AddRaw</span><span style="color:#E1E4E8">(item.Key, item.Token)</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">    out </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> errorz.</span><span style="color:#B392F0">Must</span><span style="color:#E1E4E8">(b.</span><span style="color:#B392F0">Bytes</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#E1E4E8">    fmt.</span><span style="color:#B392F0">Printf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">--- reformat ---</span><span style="color:#79B8FF">\n%s\n</span><span style="color:#9ECBFF">----------</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, out)</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<p>The first example minifies the JSON while the second example formats it with prefix ”👉” on each line.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>--- minify ---</span></span>
+<span class="line"><span>{"name":"Eve","age":24,"scores":[9,10,8],"address":{"city":"The Sun","zip":10101}}</span></span>
+<span class="line"><span>----------</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>--- reformat ---</span></span>
+<span class="line"><span>👉   {</span></span>
+<span class="line"><span>👉       "name": "Eve",</span></span>
+<span class="line"><span>👉       "age": 24,</span></span>
+<span class="line"><span>👉       "scores": [</span></span>
+<span class="line"><span>👉           9,</span></span>
+<span class="line"><span>👉           10,</span></span>
+<span class="line"><span>👉           8</span></span>
+<span class="line"><span>👉       ],</span></span>
+<span class="line"><span>👉       "address": {</span></span>
+<span class="line"><span>👉           "city": "The Sun",</span></span>
+<span class="line"><span>👉           "zip": 10101</span></span>
+<span class="line"><span>👉       }</span></span>
+<span class="line"><span>👉   }</span></span>
+<span class="line"><span>----------</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="4-adding-line-numbers">4. Adding line numbers</h3>
+<p>In this example, we add line numbers to the JSON output, by adding a <code>b.WriteNewline()</code> before the <code>fmt.Fprintf()</code> call. See <a href="https://github.com/ezpkg/ezpkg/blob/main/iter.json/examples/04.line_number/main.go">examples/04.line_number</a>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#6A737D">// 🐞Example: print with line number</span></span>
+<span class="line"><span style="color:#E1E4E8">i </span><span style="color:#F97583">:=</span><span style="color:#79B8FF"> 0</span></span>
+<span class="line"><span style="color:#E1E4E8">b </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> iterjson.</span><span style="color:#B392F0">NewBuilder</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"    "</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">for</span><span style="color:#E1E4E8"> item, err </span><span style="color:#F97583">:=</span><span style="color:#F97583"> range</span><span style="color:#E1E4E8"> iterjson.</span><span style="color:#B392F0">Parse</span><span style="color:#E1E4E8">(data) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    i</span><span style="color:#F97583">++</span></span>
+<span class="line"><span style="color:#E1E4E8">    errorz.</span><span style="color:#B392F0">MustZ</span><span style="color:#E1E4E8">(err)</span></span>
+<span class="line"><span style="color:#E1E4E8">    b.</span><span style="color:#B392F0">WriteNewline</span><span style="color:#E1E4E8">(item.Token.</span><span style="color:#B392F0">Type</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // 👉 add line number</span></span>
+<span class="line"><span style="color:#E1E4E8">    fmt.</span><span style="color:#B392F0">Fprintf</span><span style="color:#E1E4E8">(b, </span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">%3d</span><span style="color:#9ECBFF">    "</span><span style="color:#E1E4E8">, i)</span></span>
+<span class="line"><span style="color:#E1E4E8">    b.</span><span style="color:#B392F0">Add</span><span style="color:#E1E4E8">(item.Key, item.Token)</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">out </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> errorz.</span><span style="color:#B392F0">Must</span><span style="color:#E1E4E8">(b.</span><span style="color:#B392F0">Bytes</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#E1E4E8">fmt.</span><span style="color:#B392F0">Printf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">--- line number ---</span><span style="color:#79B8FF">\n%s\n</span><span style="color:#9ECBFF">----------</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, out)</span></span>
+<span class="line"></span></code></pre>
+<p>This will output:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>  1    {</span></span>
+<span class="line"><span>  2        "name": "Eve",</span></span>
+<span class="line"><span>  3        "age": 24,</span></span>
+<span class="line"><span>  4        "scores": [</span></span>
+<span class="line"><span>  5            9,</span></span>
+<span class="line"><span>  6            10,</span></span>
+<span class="line"><span>  7            8</span></span>
+<span class="line"><span>  8        ],</span></span>
+<span class="line"><span>  9        "address": {</span></span>
+<span class="line"><span> 10            "city": "The Sun",</span></span>
+<span class="line"><span> 11            "zip": 10101</span></span>
+<span class="line"><span> 12        }</span></span>
+<span class="line"><span> 13    }</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="5-adding-comments">5. Adding comments</h3>
+<p>By putting a <code>fmt.Fprintf(comment)</code> between <code>b.WriteComma()</code> and <code>b.WriteNewline()</code>, you can add a comment to the end of each line. See <a href="https://github.com/ezpkg/ezpkg/blob/main/iter.json/examples/05.comment/main.go">examples/05.comment</a>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#E1E4E8">i, newlineIdx, maxIdx </span><span style="color:#F97583">:=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">30</span></span>
+<span class="line"><span style="color:#E1E4E8">b </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> iterjson.</span><span style="color:#B392F0">NewBuilder</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"    "</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">for</span><span style="color:#E1E4E8"> item, err </span><span style="color:#F97583">:=</span><span style="color:#F97583"> range</span><span style="color:#E1E4E8"> iterjson.</span><span style="color:#B392F0">Parse</span><span style="color:#E1E4E8">(data) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    errorz.</span><span style="color:#B392F0">MustZ</span><span style="color:#E1E4E8">(err)</span></span>
+<span class="line"><span style="color:#E1E4E8">    b.</span><span style="color:#B392F0">WriteComma</span><span style="color:#E1E4E8">(item.Token.</span><span style="color:#B392F0">Type</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // 👉 add comment</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> i </span><span style="color:#F97583">></span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        length </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> b.</span><span style="color:#B392F0">Len</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> newlineIdx</span></span>
+<span class="line"><span style="color:#E1E4E8">        fmt.</span><span style="color:#B392F0">Fprint</span><span style="color:#E1E4E8">(b, strings.</span><span style="color:#B392F0">Repeat</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">" "</span><span style="color:#E1E4E8">, maxIdx</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">length))</span></span>
+<span class="line"><span style="color:#E1E4E8">        fmt.</span><span style="color:#B392F0">Fprintf</span><span style="color:#E1E4E8">(b, </span><span style="color:#9ECBFF">"// </span><span style="color:#79B8FF">%2d</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, i)</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">    i</span><span style="color:#F97583">++</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    b.</span><span style="color:#B392F0">WriteNewline</span><span style="color:#E1E4E8">(item.Token.</span><span style="color:#B392F0">Type</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#E1E4E8">    newlineIdx </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> b.</span><span style="color:#B392F0">Len</span><span style="color:#E1E4E8">() </span><span style="color:#6A737D">// save the newline index</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    b.</span><span style="color:#B392F0">Add</span><span style="color:#E1E4E8">(item.Key, item.Token)</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">length </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> b.</span><span style="color:#B392F0">Len</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> newlineIdx</span></span>
+<span class="line"><span style="color:#E1E4E8">fmt.</span><span style="color:#B392F0">Fprint</span><span style="color:#E1E4E8">(b, strings.</span><span style="color:#B392F0">Repeat</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">" "</span><span style="color:#E1E4E8">, maxIdx</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">length))</span></span>
+<span class="line"><span style="color:#E1E4E8">fmt.</span><span style="color:#B392F0">Fprintf</span><span style="color:#E1E4E8">(b, </span><span style="color:#9ECBFF">"// </span><span style="color:#79B8FF">%2d</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, i)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">out </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> errorz.</span><span style="color:#B392F0">Must</span><span style="color:#E1E4E8">(b.</span><span style="color:#B392F0">Bytes</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#E1E4E8">fmt.</span><span style="color:#B392F0">Printf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">--- comment ---</span><span style="color:#79B8FF">\n%s\n</span><span style="color:#9ECBFF">----------</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, out)</span></span>
+<span class="line"></span></code></pre>
+<p>This will output:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>{                             //  1</span></span>
+<span class="line"><span>    "name": "Eve",            //  2</span></span>
+<span class="line"><span>    "age": 24,                //  3</span></span>
+<span class="line"><span>    "scores": [               //  4</span></span>
+<span class="line"><span>        9,                    //  5</span></span>
+<span class="line"><span>        10,                   //  6</span></span>
+<span class="line"><span>        8                     //  7</span></span>
+<span class="line"><span>    ],                        //  8</span></span>
+<span class="line"><span>    "address": {              //  9</span></span>
+<span class="line"><span>        "city": "The Sun",    // 10</span></span>
+<span class="line"><span>        "zip": 10101          // 11</span></span>
+<span class="line"><span>    }                         // 12</span></span>
+<span class="line"><span>}                             // 13</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="6-filtering-json-and-extracting-values">6. Filtering JSON and extracting values</h3>
+<p>There are <code>item.GetPathString()</code> and <code>item.GetRawPath()</code> to get the path of the current item. You can use them to filter the JSON data. See <a href="https://github.com/ezpkg/ezpkg/blob/main/iter.json/examples/06.filter_print/main.go">examples/06.filter_print</a>.</p>
+<p>Example with <code>item.GetPathString()</code> and <code>regexp</code>:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#E1E4E8">fmt.</span><span style="color:#B392F0">Printf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">--- filter: GetPathString() ---</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">i </span><span style="color:#F97583">:=</span><span style="color:#79B8FF"> 0</span></span>
+<span class="line"><span style="color:#F97583">for</span><span style="color:#E1E4E8"> item, err </span><span style="color:#F97583">:=</span><span style="color:#F97583"> range</span><span style="color:#E1E4E8"> iterjson.</span><span style="color:#B392F0">Parse</span><span style="color:#E1E4E8">(data) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    i</span><span style="color:#F97583">++</span></span>
+<span class="line"><span style="color:#E1E4E8">    errorz.</span><span style="color:#B392F0">MustZ</span><span style="color:#E1E4E8">(err)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    path </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> item.</span><span style="color:#B392F0">GetPathString</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#F97583">    switch</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    case</span><span style="color:#E1E4E8"> path </span><span style="color:#F97583">==</span><span style="color:#9ECBFF"> "name"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        strings.</span><span style="color:#B392F0">Contains</span><span style="color:#E1E4E8">(path, </span><span style="color:#9ECBFF">"address"</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#6A737D">        // continue</span></span>
+<span class="line"><span style="color:#F97583">    default</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#F97583">        continue</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // 👉 print with line number</span></span>
+<span class="line"><span style="color:#E1E4E8">    fmt.</span><span style="color:#B392F0">Printf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">%2d</span><span style="color:#79B8FF"> %20s</span><span style="color:#9ECBFF"> . </span><span style="color:#79B8FF">%s\n</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, i, item.Token, item.</span><span style="color:#B392F0">GetPath</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<p>Example with <code>item.GetRawPath()</code> and <code>path.Match()</code>:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#E1E4E8">fmt.</span><span style="color:#B392F0">Printf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">--- filter: GetRawPath() ---</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">i </span><span style="color:#F97583">:=</span><span style="color:#79B8FF"> 0</span></span>
+<span class="line"><span style="color:#F97583">for</span><span style="color:#E1E4E8"> item, err </span><span style="color:#F97583">:=</span><span style="color:#F97583"> range</span><span style="color:#E1E4E8"> iterjson.</span><span style="color:#B392F0">Parse</span><span style="color:#E1E4E8">(data) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    i</span><span style="color:#F97583">++</span></span>
+<span class="line"><span style="color:#E1E4E8">    errorz.</span><span style="color:#B392F0">MustZ</span><span style="color:#E1E4E8">(err)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    path </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> item.</span><span style="color:#B392F0">GetRawPath</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#F97583">    switch</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    case</span><span style="color:#E1E4E8"> path.</span><span style="color:#B392F0">Match</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"name"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">        path.</span><span style="color:#B392F0">Contains</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"address"</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#6A737D">        // continue</span></span>
+<span class="line"><span style="color:#F97583">    default</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#F97583">        continue</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // 👉 print with line number</span></span>
+<span class="line"><span style="color:#E1E4E8">    fmt.</span><span style="color:#B392F0">Printf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">%2d</span><span style="color:#79B8FF"> %20s</span><span style="color:#9ECBFF"> . </span><span style="color:#79B8FF">%s\n</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, i, item.Token, item.</span><span style="color:#B392F0">GetPath</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<p>Both examples will output:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span> 2                "Eve" . name</span></span>
+<span class="line"><span> 9                    { . address</span></span>
+<span class="line"><span>10            "The Sun" . address.city</span></span>
+<span class="line"><span>11                10101 . address.zip</span></span>
+<span class="line"><span>12                    } . address</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="7-filtering-json-and-returning-a-new-json">7. Filtering JSON and returning a new JSON</h3>
+<p>By combining the <code>Builder</code> with the option <code>SetSkipEmptyStructures(false)</code> and the filtering logic, you can filter the JSON data and return a new JSON. See <a href="https://github.com/ezpkg/ezpkg/blob/main/iter.json/examples/07.filter_json/main.go">examples/07.filter_json</a></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#6A737D">// 🦁Example: filter and output json</span></span>
+<span class="line"><span style="color:#E1E4E8">b </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> iterjson.</span><span style="color:#B392F0">NewBuilder</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"    "</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">b.</span><span style="color:#B392F0">SetSkipEmptyStructures</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">) </span><span style="color:#6A737D">// 👉 skip empty [] or {}</span></span>
+<span class="line"><span style="color:#F97583">for</span><span style="color:#E1E4E8"> item, err </span><span style="color:#F97583">:=</span><span style="color:#F97583"> range</span><span style="color:#E1E4E8"> iterjson.</span><span style="color:#B392F0">Parse</span><span style="color:#E1E4E8">(data) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    errorz.</span><span style="color:#B392F0">MustZ</span><span style="color:#E1E4E8">(err)</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> item.Token.</span><span style="color:#B392F0">IsOpen</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">||</span><span style="color:#E1E4E8"> item.Token.</span><span style="color:#B392F0">IsClose</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">        b.</span><span style="color:#B392F0">Add</span><span style="color:#E1E4E8">(item.Key, item.Token)</span></span>
+<span class="line"><span style="color:#F97583">        continue</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    path </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> item.</span><span style="color:#B392F0">GetPathString</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#F97583">    switch</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    case</span><span style="color:#E1E4E8"> path </span><span style="color:#F97583">==</span><span style="color:#9ECBFF"> "name"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        strings.</span><span style="color:#B392F0">Contains</span><span style="color:#E1E4E8">(path, </span><span style="color:#9ECBFF">"address"</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#6A737D">        // continue</span></span>
+<span class="line"><span style="color:#F97583">    default</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#F97583">        continue</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    b.</span><span style="color:#B392F0">Add</span><span style="color:#E1E4E8">(item.Key, item.Token)</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">out </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> errorz.</span><span style="color:#B392F0">Must</span><span style="color:#E1E4E8">(b.</span><span style="color:#B392F0">Bytes</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#E1E4E8">fmt.</span><span style="color:#B392F0">Printf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">--- filter: output json ---</span><span style="color:#79B8FF">\n%s\n</span><span style="color:#9ECBFF">----------</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, out)</span></span>
+<span class="line"></span></code></pre>
+<p>This example will return a new JSON with only the filtered fields:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">    "name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Eve"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "address"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">        "city"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"The Sun"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "zip"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">10101</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h3 id="8-editing-values">8. Editing values</h3>
+<p>This is an example for editing values in a JSON data. Assume that we are using number ids for our API. The ids are too big and JavaScript can’t handle them. We need to convert them to strings. See <a href="https://github.com/ezpkg/ezpkg/blob/main/iter.json/examples/08.number_id/main.go">examples/08.number_id</a> and <a href="https://github.com/ezpkg/ezpkg/blob/main/iter.json/examples/order.json">order.json</a>.</p>
+<p>Iterate over the JSON data, find all <code>_id</code> fields and convert the number ids to strings:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#E1E4E8">b </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> iterjson.</span><span style="color:#B392F0">NewBuilder</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"    "</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">for</span><span style="color:#E1E4E8"> item, err </span><span style="color:#F97583">:=</span><span style="color:#F97583"> range</span><span style="color:#E1E4E8"> iterjson.</span><span style="color:#B392F0">Parse</span><span style="color:#E1E4E8">(data) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    errorz.</span><span style="color:#B392F0">MustZ</span><span style="color:#E1E4E8">(err)</span></span>
+<span class="line"><span style="color:#E1E4E8">    key, _ </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> item.</span><span style="color:#B392F0">GetRawPath</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">Last</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">ObjectKey</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> strings.</span><span style="color:#B392F0">HasSuffix</span><span style="color:#E1E4E8">(key, </span><span style="color:#9ECBFF">"_id"</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        id, err0 </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> item.Token.</span><span style="color:#B392F0">GetInt</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> err0 </span><span style="color:#F97583">==</span><span style="color:#79B8FF"> nil</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">            b.</span><span style="color:#B392F0">Add</span><span style="color:#E1E4E8">(item.Key, strconv.</span><span style="color:#B392F0">Itoa</span><span style="color:#E1E4E8">(id))</span></span>
+<span class="line"><span style="color:#F97583">            continue</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">    b.</span><span style="color:#B392F0">Add</span><span style="color:#E1E4E8">(item.Key, item.Token)</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">out </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> errorz.</span><span style="color:#B392F0">Must</span><span style="color:#E1E4E8">(b.</span><span style="color:#B392F0">Bytes</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#E1E4E8">fmt.</span><span style="color:#B392F0">Printf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">--- convert number id ---</span><span style="color:#79B8FF">\n%s\n</span><span style="color:#9ECBFF">----------</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, out)</span></span>
+<span class="line"></span></code></pre>
+<p>This will add quotes to the number ids:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">    "order_id"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"12345678901234"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "number"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">12</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "customer_id"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"12345678905678"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "items"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "item_id"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"12345678901042"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "quantity"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "price"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">123.45</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "item_id"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"12345678901098"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "quantity"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "price"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">234.56</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    ]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>  </div> </div> </div> </main>  <footer class="flex flex-col justify-center px-4 bg-base-100"> <div class="flex text-sm align-center justify-center h-16 mt-1 mx-4"> <div> <a href="https://github.com/ezpkg/ezpkg/blob/main/LICENSE" target="_blank">MIT License ©&nbsp;2024</a> <a href="https://olivernguyen.io" target="_blank">Oliver Nguyen</a> </div> </div> </footer> </body></html>
